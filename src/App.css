@@ -1,29 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+/* .App {
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  color: #f2f2f2;
+}
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Cardo';
 }
 
-.home,
-.reports,
-.products {
-  display: flex;
-  height: 90vh;
-  background: url(./components/image-hero.jpg);
-  font-size: 3rem;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
 
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
 
-  height: 100vh;
-  width: 100%;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  object-fit: contain;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

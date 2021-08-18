@@ -1,23 +1,52 @@
 import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Reports from './pages/Reports';
-import Products from './pages/Products';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
+import LandingPage from './pages/LandingPage';
+import HeadphonesPage from './pages/HeadphonesPage';
+import SpeakersPage from './pages/SpeakersPage';
+import EarphonePage from './pages/EarphonesPage';
+import EachProductPage from './pages/EachProductPage';
+import CheckoutPage from './pages/CheckoutPage';
+import SignUp from './components/SignUp/SignUp';
+// import Footer from './components/Footer/Footer';
+
+// import DetailHeadphone from "./components/DetailPage/detailHeadphone";
+// import Headphone from "./pages/category/headphones/Headphones";
+
 
 function App() {
   return (
-    <>
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/reports' component={Reports} />
-          <Route path='/products' component={Products} />
-        </Switch>
-      </Router>
-    </>
+    <Router>
+      <Navbar />
+      <Sidebar />
+      <Switch>
+        <Route exact path='/'>
+          <LandingPage />
+        </Route>
+        <Route exact path='/earphones'>
+          <EarphonePage />
+        </Route>
+        <Route exact path='/headphones'>
+          <HeadphonesPage />
+        </Route>
+        <Route exact path='/speakers'>
+          <SpeakersPage />
+        </Route>
+        <Route exact path='/checkout'>
+          <CheckoutPage />
+        </Route>
+        <Route exact path='/create-account'>
+          <SignUp />
+        </Route>
+        <Route path='/product/:id' children={<EachProductPage />} />
+      </Switch>
+      {/* <Footer /> */}
+    </Router>
   );
 }
 
