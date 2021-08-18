@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cardo';
+}
+
+.home,
+.reports,
+.products {
+  display: flex;
+  height: 90vh;
+  background: url(./components/image-hero.jpg);
+  font-size: 3rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
