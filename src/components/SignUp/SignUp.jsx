@@ -33,6 +33,8 @@ export default function SignUp() {
       <CssBaseline />
       <div className={classes.paper}>
         <h3><strong>Join us for free!</strong></h3>
+        <br />
+        <h4>Together we make the new system</h4>
         {/* <Typography component="h1" variant="h5">
           Sign up
         </Typography> */}
