@@ -7,6 +7,7 @@ export const Nav = styled.nav
     background: ${({ scrollNav }) => (scrollNav ? 'transparent' : '#fff')};
     height: 80px;
     margin-top: -80px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,12 +37,11 @@ export const NavLogo = styled(LinkRouter)
     color: #000;
     text-align: center;
     justify-content: center;
-    justify-self: flex-start;
     cursor: pointer;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
-    margin-left: 24px;
+    margin: 0 auto;
     font-weight: bold;
     text-decoration: none;
 `;

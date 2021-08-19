@@ -7,3 +7,11 @@
   padding: 0;
   font-family: 'Cardo', serif;
 }
+
+.button-customer {
+  margin-left: 200px;
+}
+
+.button-supplier {
+  margin-right: 400px;
+}

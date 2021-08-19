@@ -16,9 +16,28 @@ const HeroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
+                <HeroH1>Craft my clothes</HeroH1>
+                <HeroBtnWrapper>
+                    <div className='button-customer'>
+                    <Button to="/signup" 
+                    onMouseEnter={onHover} 
+                    onMouseLeave={onHover} 
+                    primary='true' 
+                    dark='true' 
+                    smooth={true} 
+                    duration={500} 
+                    spy={true} 
+                    exact="true" 
+                    offset={-80}
+                    >Customer
+                    {hover ? <ArrowForward /> : <ArrowRight />}
+                    </Button>
+                    </div>
+                </HeroBtnWrapper>
                 <HeroH1>Reach Customers</HeroH1>
                 <HeroBtnWrapper>
-                    <Button to="signup" 
+                    <div className='button-supplier'>
+                    <Button to="/signup" 
                     onMouseEnter={onHover} 
                     onMouseLeave={onHover} 
                     primary='true' 
@@ -31,10 +50,11 @@ const HeroSection = () => {
                     >Supplier
                     {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button>
+                    </div>
                 </HeroBtnWrapper>
             </HeroContent>
         </HeroContainer>
     )
 }
 
-export default HeroSection
+export default HeroSection;
