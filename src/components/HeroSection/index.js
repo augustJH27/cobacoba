@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import Video from '../../videos/video.mp4';
-import { Button1 } from '../ButtonElements';
-import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroBtnWrapper, HeroBtnWrapper1, ArrowForward, ArrowRight} from './HeroElements';
+import { Button1, Button2 } from '../ButtonElements';
+import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroBtnWrapper, HeroBtnWrapper1, HeroH2} from './HeroElements';
 
 const HeroSection = () => {
     const [hover, setHover] = useState(false);
@@ -18,8 +18,8 @@ const HeroSection = () => {
             <HeroContent>
                 <HeroBtnWrapper1>
                     <div className='button-customer'>
-                    <HeroH1>Craft my clothes</HeroH1>
-                    <Button1 to="home" 
+                    <HeroH2>Craft my clothes</HeroH2>
+                    <Button2 to="home" 
                     onMouseEnter={onHover} 
                     onMouseLeave={onHover} 
                     primary='true' 
@@ -30,8 +30,7 @@ const HeroSection = () => {
                     exact="true" 
                     offset={-80}
                     >Customer
-                    {hover ? <ArrowForward /> : <ArrowRight />}
-                    </Button1>
+                    </Button2>
                     </div>
                 </HeroBtnWrapper1>
                 <HeroBtnWrapper>
@@ -48,7 +47,6 @@ const HeroSection = () => {
                     exact="true" 
                     offset={-80}
                     >Supplier
-                    {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button1>
                     </div>
                 </HeroBtnWrapper>

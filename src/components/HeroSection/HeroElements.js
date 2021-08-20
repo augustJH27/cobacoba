@@ -64,6 +64,16 @@ export const HeroH1 = styled.h1`
     }
 `;
 
+export const HeroH2 = styled.h1`
+    color: #000;
+    font-size: 40px;
+    text-align: left;
+
+    @media screen and (max-width: 480px) {
+        font-size: 24px;
+    }
+`;
+
 export const HeroP = styled.p`
     margin-top: 24px;
     color: #fff;
