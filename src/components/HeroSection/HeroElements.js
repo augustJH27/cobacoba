@@ -18,9 +18,9 @@ export const HeroContainer = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-        background: linier-gradient(180deg,rgba(0, 0, 0, 0.2) 0%,rgba(0, 0, 0, 0.6) 100%
+        background: linear-gradient(180deg,rgba(0, 0, 0, 0.2) 0%,rgba(0, 0, 0, 0.6) 100%
         ),
-        linier-gradient(180deg,rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+        linear-gradient(180deg,rgba(0, 0, 0, 0.2) 0%, transparent 100%);
         z-index: 2;
     }
 `;
@@ -58,7 +58,7 @@ export const HeroH1 = styled.h1`
     color: #fff;
     font-size: 40px;
     text-align: left;
-
+/* 
     @media screen and (max-width: 1024px) {
         font-size: 34px;
     }
@@ -69,7 +69,8 @@ export const HeroH1 = styled.h1`
 
     @media screen and (max-width: 480px) {
         font-size: 24px;
-    }
+        margin-right: 450px;
+    } */
 `;
 
 export const HeroP = styled.p`
@@ -79,7 +80,7 @@ export const HeroP = styled.p`
     text-align: center;
     max-width: 600px;
 
-    @media screen and (max-width: 1024px) {
+    /* @media screen and (max-width: 1024px) {
         font-size: 32px;
     }
 
@@ -89,7 +90,7 @@ export const HeroP = styled.p`
 
     @media screen and (max-width: 480px) {
         font-size: 18px;
-    }
+    } */
 `;
 
 export const HeroBtnWrapper = styled.div`
@@ -97,11 +98,11 @@ export const HeroBtnWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* max-width: 600px; */
+    max-width: 600px;
 
-    @media screen and (max-width: 480px) {
+    /* @media screen and (max-width: 480px) {
         margin-left: 380px;
-    }
+    } */
 `;
 
 export const HeroBtnWrapper1 = styled.div`
@@ -111,10 +112,10 @@ export const HeroBtnWrapper1 = styled.div`
     align-items: center;
     max-width: 600px;
 
-    @media screen and (max-width: 480px) {
+    /* @media screen and (max-width: 480px) {
         
         margin-right: 400px;
-    }
+    } */
 `;
 
 export const ArrowForward = styled(MdArrowForward)`

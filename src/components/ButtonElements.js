@@ -16,10 +16,11 @@ export const Button = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin-right: 400px; */
     transition: all 0.2s ease-in-out;
 
     &:hover {
         transition : all 0.2s ease-in-out;
-        background: ${({ primary }) => (primary ? '#fff' : '#01bf71')};
+        background: ${({ primary }) => (primary ? 'transparent' : '#01bf71')};
     }
 `;
