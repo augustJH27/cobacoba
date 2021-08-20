@@ -3,8 +3,7 @@ import { Link as LinkScroll } from 'react-scroll';
 import { Link as LinkRouter } from 'react-router-dom';
 import {FaTimes} from 'react-icons/fa';
 
-export const SidebarContainer = styled.aside
-`
+export const SidebarContainer = styled.aside`
     position: fixed;
     z-index: 999;
     width: 100%;
@@ -19,14 +18,12 @@ export const SidebarContainer = styled.aside
     top: ${({ isOpen}) => (isOpen ? '0' : '-100%')};
 `;
 
-export const CloseIcon = styled(FaTimes)
-`
+export const CloseIcon = styled(FaTimes)`
     color: #fff;
 `;
 
-export const Icon = styled.div
-`
-    positions: absolute;
+export const Icon = styled.div`
+    position: absolute;
     top: 1.2rem;
     right: 1.5rem;
     background: transparent;
@@ -35,25 +32,22 @@ export const Icon = styled.div
     outline: none;
 `;
 
-export const SidebarWrapper = styled.div
-`
+export const SidebarWrapper = styled.div`
     color: #fff;
 `;
 
-export const SidebarMenu = styled.ul
-`
+export const SidebarMenu = styled.ul`
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 80px);
+    grid-template-rows: repeat(8, 80px);
     text-align: center;
 
     @media screen and (max-width: 480px) {
-        grid-template-rows: repeat(6, 60px);
+        grid-template-rows: repeat(8, 60px);
     }
 `;
 
-export const SidebarLink = styled(LinkScroll)
-`
+export const SidebarLink = styled(LinkScroll)`
     display: flex;
     font-family: 'Lato', sans;
     align-items: center;
@@ -72,14 +66,12 @@ export const SidebarLink = styled(LinkScroll)
     }
 `;
 
-export const SideBtnWrap = styled.div
-`
+export const SideBtnWrap = styled.div`
     display: flex;
     justify-content: center;
 `;
 
-export const SidebarRoute = styled(LinkRouter)
-`
+export const SidebarRoute = styled(LinkRouter)`
     border-radius: 0px;
     background: #01bf71;
     white-space: nowrap;

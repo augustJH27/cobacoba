@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import { MdArrowForward, MdKeyboardArrowRight } from 'react-icons/md';
 
-export const HeroContainer = styled.div
-`
+export const HeroContainer = styled.div`
     background: #fff;
     display: flex;
     justify-content: center;
@@ -19,15 +18,14 @@ export const HeroContainer = styled.div
         left: 0;
         right: 0;
         bottom: 0;
-        background : linier-gradient(180deg,rgba(0, 0, 0, 0.2) 0%,rgba(0, 0, 0, 0.6) 100%
+        background: linier-gradient(180deg,rgba(0, 0, 0, 0.2) 0%,rgba(0, 0, 0, 0.6) 100%
         ),
         linier-gradient(180deg,rgba(0, 0, 0, 0.2) 0%, transparent 100%);
         z-index: 2;
     }
 `;
 
-export const HeroBg = styled.div
-`
+export const HeroBg = styled.div`
     position: absolute;
     top: 0;
     right: 0;
@@ -38,8 +36,7 @@ export const HeroBg = styled.div
     overflow: hidden;
 `;
 
-export const VideoBg = styled.video
-`
+export const VideoBg = styled.video`
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
@@ -47,8 +44,7 @@ export const VideoBg = styled.video
     background: #232a34;
 `;
 
-export const HeroContent = styled.div
-`
+export const HeroContent = styled.div`
     z-index: 3;
     // max-width: 1200px;
     position: absolute;
@@ -58,23 +54,21 @@ export const HeroContent = styled.div
     align-items: center;
 `;
 
-export const HeroH1 = styled.h1
-`
+export const HeroH1 = styled.h1`
     color: #fff;
     font-size: 48px;
     text-align: left;
 
     @media screen and (max-width: 768px) {
-        font-size: 40px;
+        font-size: 35px;
     }
 
     @media screen and (max-width: 480px) {
-        font-size: 32px;
+        font-size: 26px;
     }
 `;
 
-export const HeroP = styled.p
-`
+export const HeroP = styled.p`
     margin-top: 24px;
     color: #fff;
     font-size: 24px;
@@ -90,22 +84,19 @@ export const HeroP = styled.p
     }
 `;
 
-export const HeroBtnWrapper = styled.div
-`
+export const HeroBtnWrapper = styled.div`
     margin-top: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
 
-export const ArrowForward = styled(MdArrowForward)
-`
+export const ArrowForward = styled(MdArrowForward)`
     margin-left: 8px;
     font-size: 20px;
 `;
 
-export const ArrowRight = styled(MdKeyboardArrowRight)
-`
+export const ArrowRight = styled(MdKeyboardArrowRight)`
     margin-left: 8px;
     font-size: 20px;
 `;

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Container = styled.div
-`
+export const Container = styled.div`
     min-height: 692px;
     position: fixed;
     bottom: 0;
@@ -17,8 +16,7 @@ export const Container = styled.div
         rgba(10, 201, 122, 1) 100%);
 `;
 
-export const FormWrap = styled.div
-`
+export const FormWrap = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -29,8 +27,7 @@ export const FormWrap = styled.div
     }
 `;
 
-export const Icon = styled(Link)
-`
+export const Icon = styled(Link)`
     margin-left: 32px;
     margin-top: 32px;
     text-decoration: none;
@@ -44,8 +41,7 @@ export const Icon = styled(Link)
     }
 `;
 
-export const FormContent = styled.div
-`
+export const FormContent = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -56,8 +52,7 @@ export const FormContent = styled.div
     }
 `;
 
-export const Form = styled.form
-`
+export const Form = styled.form`
     background: #010101;
     max-width: 400px;
     height: auto;
@@ -74,8 +69,7 @@ export const Form = styled.form
     }
 `;
 
-export const FormH1 = styled.h1
-`
+export const FormH1 = styled.h1`
     margin-bottom: 40px;
     color: #fff;
     font-size: 20px;
@@ -83,23 +77,20 @@ export const FormH1 = styled.h1
     text-align: center;
 `;
 
-export const FormLabel = styled.label
-`
+export const FormLabel = styled.label`
     margin-bottom: 8px;
     font-size: 14px;
     color: #fff;
 `;
 
-export const FormInput = styled.input
-`
+export const FormInput = styled.input`
     padding: 16px 16px;
     margin-bottom: 32px;
     border: none;
     border-radius: 0px;
 `;
 
-export const FormButton = styled.button
-`
+export const FormButton = styled.button`
     background: #01bf71;
     padding: 16px 0;
     border: none;
@@ -109,8 +100,7 @@ export const FormButton = styled.button
     cursor: pointer;
 `;
 
-export const Text = styled.span
-`
+export const Text = styled.span`
     text-align: center;
     margin-top: 24px;
     color: #fff;
