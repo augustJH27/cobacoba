@@ -16,9 +16,9 @@ const HeroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
-                <HeroH1>Craft my clothes</HeroH1>
                 <HeroBtnWrapper>
                     <div className='button-customer'>
+                    <HeroH1>Craft my clothes</HeroH1>
                     <Button to="/signup" 
                     onMouseEnter={onHover} 
                     onMouseLeave={onHover} 
@@ -34,9 +34,9 @@ const HeroSection = () => {
                     </Button>
                     </div>
                 </HeroBtnWrapper>
-                <HeroH1>Reach Customers</HeroH1>
                 <HeroBtnWrapper>
                     <div className='button-supplier'>
+                    <HeroH1>Reach Customers</HeroH1>
                     <Button to="/signup" 
                     onMouseEnter={onHover} 
                     onMouseLeave={onHover} 
