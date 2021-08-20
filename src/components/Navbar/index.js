@@ -62,8 +62,8 @@ const Navbar = ({ toggle }) => {
                         </NavItem>
                     </NavMenu> */}
                     <NavBtn>
-                        <NavBtnLink to="/signup"><strong>Join Us</strong></NavBtnLink>
-                        <FaUser />
+                        <NavBtnLink to="/signup">Join Us</NavBtnLink>
+                        <FaUser cursor='pointer'/>
                     </NavBtn>
                 </NavbarContainer>
             </Nav>
