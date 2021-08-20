@@ -22,7 +22,7 @@
 /* @media screen and (max-width: 480px) {
   .button-customer {
     margin-bottom: 20px;
-    margin-left: 250px;
+    margin-left: -500px;
   }
   .button-supplier {
     margin-bottom: 200px;
@@ -41,9 +41,9 @@
     margin-right: 400px;
   }
   
-} */
+}
 
-/* @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .button-customer {
     margin-bottom: 200px;
     margin-left: 570px;
