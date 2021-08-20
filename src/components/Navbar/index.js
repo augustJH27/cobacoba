@@ -17,6 +17,8 @@ import {
 const Navbar = ({ toggle }) => {
     const [scrollNav, setScrollNav] = useState(false)
 
+
+
     const changeNav = () => {
         if (window.scrollY >= 60) {
             setScrollNav(true)
@@ -38,12 +40,12 @@ const Navbar = ({ toggle }) => {
            <IconContext.Provider value={{ color: '#000'}}>
             <Nav scrollNav={scrollNav}>
                 <NavbarContainer>
-                    <NavLogo to='/' onClick={toggleHome}>Shopperbird</NavLogo>
                     <MobileIcon onClick={toggle}>
                         <Link to='#' className='menu-bars'>
                         <FaBars />
                         </Link>
                     </MobileIcon>
+                    <NavLogo to='/' onClick={toggleHome}>Shopperbird</NavLogo>
                     <NavBtn>
                         <NavBtnLink to="/signup">Join Us</NavBtnLink>
                         <FaUser cursor='pointer'/>

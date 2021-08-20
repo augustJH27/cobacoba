@@ -5,6 +5,7 @@ import HeroSection from '../components/HeroSection'
 import MainSection from '../components/MainSection/index';
 import Complete from '../components/Complete/Complete';
 import Upcycle from '../components/Upcycle/Upcycle';
+// import Product from '../components/Product/index';
 import Services from '../components/Services';
 import Footer from '../components/Footer';
 
@@ -23,6 +24,7 @@ const Home = () => {
           <MainSection />
           <Complete />
           <Upcycle />
+          {/* <Product /> */}
           <Services />
           <Footer />
         </>
