@@ -5,7 +5,7 @@ import { Link as LinkScroll } from 'react-scroll';
 export const Nav = styled.nav`
     background-color: ${({ scrollNav }) => (scrollNav ? '#fff' : 'transparent')};
     height: 60px;
-    margin-top: -60px;
+    /* margin-top: -60px; */
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -14,6 +14,7 @@ export const Nav = styled.nav`
     position: sticky;
     top: 0;
     z-index: 999;
+    box-shadow: ${({ scrollNav }) => (scrollNav ? '0px 1px 2px 0px #000' : 'none')};
 
     @media screen and (max-width: 960px){
         transition: 0.8s all ease;

@@ -13,21 +13,22 @@ import {
     NavBtnLink
 } from './NavbarElements';
 
-
 const Navbar = ({ toggle }) => {
     const [scrollNav, setScrollNav] = useState(false);
 
     const changeNav = () => {
         if (window.scrollY >= 60) {
             setScrollNav(true)
+        console.log('turun')
         } else {
             setScrollNav(false)
+        console.log('naik')
         }
-    console.log(scrollNav, window.scrollY, 'test');
+    // console.log(scrollNav, window.scrollY, 'test');
     }
 
     useEffect(() => {
-        window.addEventListener('scroll',changeNav)
+        window.addEventListener('scroll', changeNav)
     },[])
 
     const toggleHome = () => {
