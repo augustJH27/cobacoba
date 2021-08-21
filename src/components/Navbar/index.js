@@ -10,7 +10,7 @@ import {
     NavLogo, 
     MobileIcon, 
     NavBtn, 
-    NavBtnLink
+    NavBtnLink1
 } from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
@@ -19,12 +19,9 @@ const Navbar = ({ toggle }) => {
     const changeNav = () => {
         if (window.scrollY >= 60) {
             setScrollNav(true)
-        console.log('turun')
         } else {
             setScrollNav(false)
-        console.log('naik')
         }
-    // console.log(scrollNav, window.scrollY, 'test');
     }
 
     useEffect(() => {
@@ -47,7 +44,7 @@ const Navbar = ({ toggle }) => {
                     </MobileIcon>
                     <NavLogo to='/' onClick={toggleHome}>Shopperbird</NavLogo>
                     <NavBtn>
-                        <NavBtnLink to="/signup">Join Us</NavBtnLink>
+                        <NavBtnLink1 to="/signup">Join Us</NavBtnLink1>
                         <Link to='/signup' cursor='pointer'>
                         <FaUser />
                         </Link>

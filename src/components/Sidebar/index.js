@@ -1,5 +1,6 @@
 import React from 'react'
-import {SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink } from './SidebarElements'
+import { Link } from 'react-router-dom';
+import {SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarRoute } from './SidebarElements'
 
 const Sidebar = ({ isOpen, toggle}) => {
     return (
@@ -9,33 +10,51 @@ const Sidebar = ({ isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to="about" onClick={toggle}>
+                    <Link to='/'>
+                    <SidebarRoute to="/" onClick={toggle}>
                         HOME
-                    </SidebarLink>
-                    <SidebarLink to="discover" onClick={toggle}>
+                    </SidebarRoute>
+                    </Link>
+                    <Link to='/about-us'>
+                    <SidebarRoute to="/about-us" onClick={toggle}>
                         ABOUT US
-                    </SidebarLink>
-                    <SidebarLink to="services" onClick={toggle}>
+                    </SidebarRoute>
+                    </Link>
+                    <Link to='/signup'>
+                    <SidebarRoute to="/signup" onClick={toggle}>
                         JOIN US
-                    </SidebarLink>
-                    <SidebarLink to="services" onClick={toggle}>
+                    </SidebarRoute>
+                    </Link>
+                    <Link to='/measure'>
+                    <SidebarRoute to="/measure" onClick={toggle}>
                         MEASURE
-                    </SidebarLink>
-                    <SidebarLink to="services" onClick={toggle}>
+                    </SidebarRoute>
+                    </Link>
+                    <Link to='/design'>
+                    <SidebarRoute to="/design" onClick={toggle}>
                         DESIGN
-                    </SidebarLink>
-                    <SidebarLink to="services" onClick={toggle}>
+                    </SidebarRoute>
+                    </Link>
+                    <Link to='/upcycle'>
+                    <SidebarRoute to="/upcycle" onClick={toggle}>
                         UPCYCLE
-                    </SidebarLink>
-                    <SidebarLink to="services" onClick={toggle}>
+                    </SidebarRoute>
+                    </Link>
+                    <Link to='/news'>
+                    <SidebarRoute to="/news" onClick={toggle}>
                         NEWS
-                    </SidebarLink>
-                    <SidebarLink to="/signin" onClick={toggle}>
+                    </SidebarRoute>
+                    </Link>
+                    <Link to='/signin'>
+                    <SidebarRoute to="/signin" onClick={toggle}>
                         Log in
-                    </SidebarLink>
-                    <SidebarLink to="/signup" onClick={toggle}>
+                    </SidebarRoute>
+                    </Link>
+                    <Link to='/signup'>
+                    <SidebarRoute to="/signup" onClick={toggle}>
                         Create Account
-                    </SidebarLink>
+                    </SidebarRoute>
+                    </Link>
                 </SidebarMenu>
             </SidebarWrapper>
         </SidebarContainer>

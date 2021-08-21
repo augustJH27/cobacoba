@@ -39,7 +39,7 @@ export const SidebarWrapper = styled.div`
 export const SidebarMenu = styled.ul`
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(9, 80px);
+    grid-template-rows: repeat(9, 60px);
     text-align: center;
 
     @media screen and (max-width: 480px) {
@@ -72,12 +72,9 @@ export const SideBtnWrap = styled.div`
 `;
 
 export const SidebarRoute = styled(LinkRouter)`
-    border-radius: 0px;
-    background: #01bf71;
     white-space: nowrap;
-    padding: 16px 64px;
     color: #010606;
-    font-size: 16px;
+    font-size: 18px;
     outline: none;
     border: none;
     cursor: pointer;

@@ -13,6 +13,10 @@ a {
   font-family: 'Cardo', serif !important;
 }
 
+.MuiTypography-colorPrimary {
+  color: #000 !important;
+}
+
 input {
   font-family: 'Cardo', serif !important;
 }

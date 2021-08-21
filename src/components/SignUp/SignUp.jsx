@@ -32,12 +32,9 @@ export default function SignUp() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <h3><strong>Join us for free!</strong></h3>
+        <h2><strong>Join us for free!</strong></h2>
         <br />
-        <h4>Together we make the new system</h4>
-        {/* <Typography component="h1" variant="h5">
-          Sign up
-        </Typography> */}
+        <h3>Together we make the new system</h3>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>

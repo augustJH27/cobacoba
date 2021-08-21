@@ -7,7 +7,6 @@ export const Button = styled.div`
     height: 3rem;
 
     background: ${({ primary }) => (primary ? '#000' : '#fff')};
-    //010606 is black
     white-space: nowrap;
     padding: ${({ big }) => (big ? '14px 36px' : '12px 30px')};
     color : ${({ dark }) => (dark ? '#fff' : '#000')};
@@ -18,7 +17,6 @@ export const Button = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-right: 400px; */
     transition: all 0.2s ease-in-out;
 
     &:hover {
@@ -32,7 +30,6 @@ export const Button1 = styled(Link)`
     width: 10rem;
     height: 3rem;
     background: ${({ primary }) => (primary ? '#000' : '#fff')};
-    //010606 is black
     white-space: nowrap;
     padding: ${({ big }) => (big ? '14px 36px' : '12px 30px')};
     color : ${({ dark }) => (dark ? '#fff' : '#000')};
@@ -43,7 +40,6 @@ export const Button1 = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-right: 400px; */
     transition: all 0.2s ease-in-out;
 
     &:hover {

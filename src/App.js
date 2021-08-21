@@ -4,6 +4,8 @@ import Home from './pages';
 import Login from './components/Login/Login';
 // import SigninPage from './pages/signin';
 import SignUp from './components/SignUp/SignUp';
+import Upcycle from './components/Upcycle/Upcycle';
+import Design from './components/Services/index';
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
         <Route path='/signin' component={Login} />
         {/* <Route path='/signin' component={SigninPage} /> */}
         <Route path="/signup" component={SignUp} exact />
+        <Route path='/upcycle' component={Upcycle} />
+        <Route path='/design' component={Design} />
       </Switch>
     </Router>
   );
