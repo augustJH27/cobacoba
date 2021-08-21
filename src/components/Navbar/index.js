@@ -23,6 +23,7 @@ const Navbar = ({ toggle }) => {
         } else {
             setScrollNav(false)
         }
+    console.log(scrollNav, window.scrollY, 'test');
     }
 
     useEffect(() => {
