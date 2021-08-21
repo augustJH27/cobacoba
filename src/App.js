@@ -2,10 +2,10 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './pages';
 import Login from './components/Login/Login';
-// import SigninPage from './pages/signin';
-import SignUp from './components/SignUp/SignUp';
+import Register from './components/Register/Register';
 import Upcycle from './components/Upcycle/Upcycle';
-import Design from './components/Services/index';
+import Design from './components/Design/index';
+import Complete from './components/Complete/Complete';
 
 
 function App() {
@@ -13,11 +13,11 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path='/signin' component={Login} />
-        {/* <Route path='/signin' component={SigninPage} /> */}
-        <Route path="/signup" component={SignUp} exact />
+        <Route path='/login' component={Login} />
+        <Route path="/register" component={Register} exact />
         <Route path='/upcycle' component={Upcycle} />
         <Route path='/design' component={Design} />
+        <Route path='/customer-page' component={Complete} />
       </Switch>
     </Router>
   );

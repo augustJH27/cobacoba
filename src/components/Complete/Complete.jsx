@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ServicesContainer, ServicesH1, ServicesH2, } from '../Services/ServicesElements';
+import { ServicesContainer, ServicesH1, ServicesH2, } from '../Design/DesignElements';
 import { BtnWrap } from '../InfoSection/InfoElements';
 import { Button } from '../ButtonElements';
 
@@ -12,7 +12,7 @@ const Complete = ({buttonLabel, primary, dark, dark2}) => {
 						<br/>
 						<BtnWrap>
 							<Link 
-							to='/signup' 
+							to='/register' 
 							role='button'>
 							<Button
 							smooth={true} 

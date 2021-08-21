@@ -17,6 +17,11 @@ a {
   color: #000 !important;
 }
 
+.MuiButton-contained {
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
 input {
   font-family: 'Cardo', serif !important;
 }

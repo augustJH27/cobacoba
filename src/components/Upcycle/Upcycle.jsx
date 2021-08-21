@@ -1,5 +1,5 @@
 import React from 'react'
-import { ServicesContainer, ServicesH1, ServicesH2, } from '../Services/ServicesElements';
+import { ServicesContainer, ServicesH1, ServicesH2, } from '../Design/DesignElements';
 import { BtnWrap } from '../InfoSection/InfoElements';
 import { Button } from '../ButtonElements';
 
