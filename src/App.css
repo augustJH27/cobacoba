@@ -8,6 +8,18 @@
   font-family: 'Cardo', serif;
 }
 
+a {
+  text-decoration: none !important;
+  font-family: 'Cardo', serif !important;
+}
+
+input {
+  font-family: 'Cardo', serif !important;
+}
+
+label {
+  font-family: 'Cardo', serif !important;
+}
 /* .button-customer {
   margin-bottom: 10px;
   margin-left: 900px;

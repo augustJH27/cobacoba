@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import ImgBg from '../Product/pizza-3.jpg';
 import { MdArrowForward, MdKeyboardArrowRight } from 'react-icons/md';
 
@@ -8,6 +8,7 @@ export const HeroContainer = styled.div`
     background-position: center;
     background-size: cover;
     height: calc(100vh - 80px);
+    
 `;
 
 

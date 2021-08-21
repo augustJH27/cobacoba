@@ -15,9 +15,7 @@ import {
 
 
 const Navbar = ({ toggle }) => {
-    const [scrollNav, setScrollNav] = useState(false)
-
-
+    const [scrollNav, setScrollNav] = useState(false);
 
     const changeNav = () => {
         if (window.scrollY >= 60) {
@@ -48,7 +46,9 @@ const Navbar = ({ toggle }) => {
                     <NavLogo to='/' onClick={toggleHome}>Shopperbird</NavLogo>
                     <NavBtn>
                         <NavBtnLink to="/signup">Join Us</NavBtnLink>
-                        <FaUser cursor='pointer'/>
+                        <Link to='/signup' cursor='pointer'>
+                        <FaUser />
+                        </Link>
                     </NavBtn>
                 </NavbarContainer>
             </Nav>
