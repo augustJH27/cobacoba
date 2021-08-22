@@ -10,7 +10,7 @@ import {
     NavLogo, 
     MobileIcon, 
     NavBtn, 
-    // NavBtnLink1
+    NavBtnLink2
 } from '../Navbar/NavbarElements';
 
 const Navbar = ({ toggle }) => {
@@ -44,7 +44,7 @@ const Navbar = ({ toggle }) => {
                     </MobileIcon>
                     <NavLogo to='/' onClick={toggleHome}>Shopperbird</NavLogo>
                     <NavBtn>
-                        {/* <NavBtnLink1 to="/register">Join Us</NavBtnLink1> */}
+                        <NavBtnLink2 to="/register">Hello, username</NavBtnLink2>
                         <Link to='/register' cursor='pointer'>
                         <FaUser />
                         </Link>

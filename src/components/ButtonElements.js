@@ -73,14 +73,14 @@ export const Button2 = styled(Link)`
 
 export const Button3 = styled.div`
     border-radius: 0px;
-    width: 13rem;
-    height: 4rem;
+    width: 12rem;
+    height: 5rem;
 
     background: ${({ primary }) => (primary ? '#000' : '#fff')};
     white-space: nowrap;
     padding: ${({ big }) => (big ? '14px 36px' : '12px 30px')};
     color : ${({ dark }) => (dark ? '#fff' : '#000')};
-    font-size: ${({ fontBig }) => (fontBig ? '46px' : '30px')};
+    font-size: ${({ fontBig }) => (fontBig ? '34px' : '22px')};
     font-weight: 700;
     outline: none;
     border: 4px #000 solid;
