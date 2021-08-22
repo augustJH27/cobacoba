@@ -6,8 +6,10 @@ import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 // import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { grey } from '@material-ui/core/colors';
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -25,11 +27,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const ColorButton = withStyles((theme) => ({
+  root: {
+    padding: '10px 28px',
+    color: theme.palette.getContrastText(grey[900]),
+    backgroundColor: grey[900],
+    '&:hover': {
+      backgroundColor: grey[900],
+    },
+  },
+}))(Button);
+
 export default function Register() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
         <h2><strong>Join us for free!</strong></h2>
@@ -96,15 +109,14 @@ export default function Register() {
               />
             </Grid>
           </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="#fff"
-            className={classes.submit}
+          <ColorButton 
+          type='submit'
+          variant="contained" 
+          color="primary" 
+          className={classes.submit}
           >
-            Join Us!
-          </Button>
+          JOIN US
+          </ColorButton>
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href='/login' variant="body2">

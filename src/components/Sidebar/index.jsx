@@ -10,6 +10,7 @@ const Sidebar = ({ isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
+                    <br />
                     <Link to='/'>
                     <SidebarRoute to="/" onClick={toggle}>
                         HOME
@@ -20,39 +21,9 @@ const Sidebar = ({ isOpen, toggle}) => {
                         ABOUT US
                     </SidebarRoute>
                     </Link>
-                    <Link to='/register'>
-                    <SidebarRoute to="/register" onClick={toggle}>
-                        JOIN US
-                    </SidebarRoute>
-                    </Link>
-                    <Link to='/measure'>
-                    <SidebarRoute to="/measure" onClick={toggle}>
-                        MEASURE
-                    </SidebarRoute>
-                    </Link>
-                    <Link to='/design'>
-                    <SidebarRoute to="/design" onClick={toggle}>
-                        DESIGN
-                    </SidebarRoute>
-                    </Link>
-                    <Link to='/upcycle'>
-                    <SidebarRoute to="/upcycle" onClick={toggle}>
-                        UPCYCLE
-                    </SidebarRoute>
-                    </Link>
                     <Link to='/news'>
                     <SidebarRoute to="/news" onClick={toggle}>
                         NEWS
-                    </SidebarRoute>
-                    </Link>
-                    <Link to='/login'>
-                    <SidebarRoute to="/login" onClick={toggle}>
-                        Log in
-                    </SidebarRoute>
-                    </Link>
-                    <Link to='/register'>
-                    <SidebarRoute to="/register" onClick={toggle}>
-                        Create Account
                     </SidebarRoute>
                     </Link>
                 </SidebarMenu>

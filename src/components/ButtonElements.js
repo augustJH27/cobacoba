@@ -70,3 +70,28 @@ export const Button2 = styled(Link)`
         background: ${({ primary }) => (primary ? '#323636' : '#92a89f')};
     }
 `;
+
+export const Button3 = styled.div`
+    border-radius: 0px;
+    width: 13rem;
+    height: 4rem;
+
+    background: ${({ primary }) => (primary ? '#000' : '#fff')};
+    white-space: nowrap;
+    padding: ${({ big }) => (big ? '14px 36px' : '12px 30px')};
+    color : ${({ dark }) => (dark ? '#fff' : '#000')};
+    font-size: ${({ fontBig }) => (fontBig ? '46px' : '30px')};
+    font-weight: 700;
+    outline: none;
+    border: 4px #000 solid;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transition : all 0.2s ease-in-out;
+        background: ${({ primary }) => (primary ? '#92a89f' : '#dae0e0')};
+    }
+`;

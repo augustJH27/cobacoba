@@ -5,8 +5,8 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Upcycle from './components/Upcycle/Upcycle';
 import Design from './components/Design/index';
-import Complete from './components/Complete/Complete';
-
+import CustomerPage from './pages/CustomerPage';
+import Repeat from './components/Repeat/Repeat';
 
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
         <Route path="/register" component={Register} exact />
         <Route path='/upcycle' component={Upcycle} />
         <Route path='/design' component={Design} />
-        <Route path='/customer-page' component={Complete} />
+        <Route path='/customer-page' component={CustomerPage} />
+        <Route path='/repeat' component={Repeat} />
       </Switch>
     </Router>
   );

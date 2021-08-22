@@ -67,7 +67,7 @@ export default function Login() {
             color="#fff"
             className={classes.submit}
           >
-            Sign In
+            Login
           </Button>
           <Grid container>
             <Grid item xs>
