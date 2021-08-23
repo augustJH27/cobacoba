@@ -117,7 +117,7 @@ export const NavBtnLink = styled(LinkRouter)`
     background: #fff;
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: #000;
     font-size: 16px;
     outline: none;
     border: none;
@@ -128,7 +128,7 @@ export const NavBtnLink = styled(LinkRouter)`
     &:hover {
         transition: all 0.2s ease-in-out;
         background: #fff;
-        color: #010606;
+        color: #000;
     }
     @media screen and (max-width: 768px) {
         display: none;
@@ -141,7 +141,7 @@ export const NavBtnLink1 = styled(LinkRouter)`
     background: transparent;
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: #000;
     font-size: 18px;
     outline: none;
     border: none;
@@ -152,7 +152,7 @@ export const NavBtnLink1 = styled(LinkRouter)`
     &:hover {
         transition: all 0.2s ease-in-out;
         background: transparent;
-        color: #010606;
+        color: #000;
     }
     @media screen and (max-width: 768px) {
         display: none;
@@ -165,7 +165,7 @@ export const NavBtnLink2 = styled(LinkRouter)`
     background: transparent;
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: #000;
     font-size: 18px;
     outline: none;
     border: none;
@@ -176,7 +176,7 @@ export const NavBtnLink2 = styled(LinkRouter)`
     &:hover {
         transition: all 0.2s ease-in-out;
         background: transparent;
-        color: #010606;
+        color: #000;
     }
     @media screen and (max-width: 768px) {
         display: none;

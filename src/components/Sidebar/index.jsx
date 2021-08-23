@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import {SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarRoute } from './SidebarElements'
+import {SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarLink, SidebarMenu, SidebarRoute } from './SidebarElements'
 
 const Sidebar = ({ isOpen, toggle}) => {
     return (
@@ -10,7 +10,9 @@ const Sidebar = ({ isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <br />
+                    <SidebarLink to='/' onClick={toggle}>
+
+                    </SidebarLink>
                     <Link to='/'>
                     <SidebarRoute to="/" onClick={toggle}>
                         HOME
@@ -32,4 +34,4 @@ const Sidebar = ({ isOpen, toggle}) => {
     )
 }
 
-export default Sidebar
+export default Sidebar;

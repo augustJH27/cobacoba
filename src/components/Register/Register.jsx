@@ -1,4 +1,8 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
+import { useAuth } from '../../helpers/AuthContext';
+import { useHistory } from 'react-router-dom';
+
+import Alert from '@material-ui/lab/Alert';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -41,14 +45,45 @@ const ColorButton = withStyles((theme) => ({
 export default function Register() {
   const classes = useStyles();
 
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const passwordConfirmRef = useRef();
+
+  const { register } = useAuth();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const history = useHistory()
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError('Passwords do not match')
+    }
+
+    try {
+      setError('')
+      setLoading(true)
+      await register(emailRef.current.value, passwordRef.current.value)
+      history.push('/')
+    } catch {
+      setError('Failed to create an account')
+    }
+
+    setLoading(false)
+  }
+
   return (
     <Container component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
-        <h2><strong>Join us for free!</strong></h2>
+        <h1><strong>Join us for free!</strong></h1>
         <br />
-        <h3>Together we make the new system</h3>
-        <form className={classes.form} noValidate>
+        <h2>Together we make the new system</h2>
+        {error && <Alert severity="warning">{error}</Alert>}
+        <form onSubmit={handleSubmit} className={classes.form}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -60,6 +95,7 @@ export default function Register() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                ref={firstNameRef}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -71,6 +107,7 @@ export default function Register() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                ref={lastNameRef}
               />
             </Grid>
             <Grid item xs={12}>
@@ -82,6 +119,7 @@ export default function Register() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                ref={emailRef}
               />
             </Grid>
             <Grid item xs={12}>
@@ -94,6 +132,7 @@ export default function Register() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                ref={passwordRef}
               />
             </Grid>
 						<Grid item xs={12}>
@@ -106,6 +145,7 @@ export default function Register() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                ref={passwordConfirmRef}
               />
             </Grid>
           </Grid>
@@ -114,6 +154,7 @@ export default function Register() {
           variant="contained" 
           color="primary" 
           className={classes.submit}
+          disabled={loading}
           >
           JOIN US
           </ColorButton>

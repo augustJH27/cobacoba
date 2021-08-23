@@ -3,16 +3,13 @@ import ImgBg from '../../assets/bg.jpg'
 import { MdArrowForward, MdKeyboardArrowRight } from 'react-icons/md';
 
 export const HeroContainer = styled.div`
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
-    url(${ImgBg});
+    background: url(${ImgBg});
     background-position: center;
     background-size: cover;
     height: calc(100vh - 80px);
     margin-top: -60px;
-    padding-top: 60px;
-    
+    padding-top: 60px;    
 `;
-
 
 export const HeroContent = styled.div`
     height: 100%;
