@@ -13,10 +13,6 @@ a {
   font-family: 'Cardo', serif !important;
 }
 
-.MuiTypography-colorPrimary {
-  color: #000 !important;
-}
-
 input {
   font-family: 'Cardo', serif !important;
 }
@@ -24,12 +20,10 @@ input {
 label {
   font-family: 'Cardo', serif !important;
 }
-/* .button-customer {
-  margin-bottom: 10px;
-  margin-left: 900px;
-}
 
-.button-supplier {
-  margin-top: 100px;
-  margin-right: 900px;
-} */
+.MuiTypography-colorPrimary {
+  color: #000 !important;
+}
+a.MuiTypography-body2 {
+  font-size: 1rem;
+}

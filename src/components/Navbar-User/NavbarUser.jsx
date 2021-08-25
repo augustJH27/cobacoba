@@ -44,8 +44,8 @@ const Navbar = ({ toggle }) => {
                     </MobileIcon>
                     <NavLogo to='/' onClick={toggleHome}>Shopperbird</NavLogo>
                     <NavBtn>
-                        <NavBtnLink2 to="/register">Hello, username</NavBtnLink2>
-                        <Link to='/register' cursor='pointer'>
+                        <NavBtnLink2 to="/profile">Hello, username</NavBtnLink2>
+                        <Link to='/profile' cursor='pointer'>
                         <FaUser />
                         </Link>
                     </NavBtn>

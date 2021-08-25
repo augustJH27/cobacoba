@@ -1,10 +1,5 @@
-import React, {useRef, useState} from 'react';
-import { useAuth } from '../../helpers/AuthContext';
-import { useHistory } from 'react-router-dom';
-import 'firebase/auth';
-import firebase from 'firebase/app';
+import React from 'react';
 
-import Alert from '@material-ui/lab/Alert';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -45,50 +40,13 @@ const ColorButton = withStyles((theme) => ({
 export default function Login() {
   const classes = useStyles();
 
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const { login } = useAuth();
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-  const history = useHistory();
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-
-    try {
-      setError('')
-      setLoading(true)
-      await login(emailRef.current.value, passwordRef.current.value)
-      history.push('/')
-    } catch {
-      setError('Failed to log in')
-      console.log('error')
-    }
-
-    setLoading(false)
-  }
-
-  // const googleProvider = new firebase.auth.GoogleAuthProvider();
-
-  // const handleLoginPopUp = () => {
-  //   firebase.auth()
-  //   .signInWithPopup(googleProvider)
-  //   .then((result) => {
-
-  //     console.log(result);
-  //   }).catch((error) => {
-  //     console.log(error);
-  //   });
-  // }
-
   return (
     
     <Container component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
         <h1><strong>Login</strong></h1>
-        {error && <Alert severity="warning">{error}</Alert>}
-        <form onSubmit={handleSubmit} className={classes.form}>
+        <form className={classes.form}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -99,7 +57,6 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
-            ref={emailRef}
           />
           <TextField
             variant="outlined"
@@ -111,20 +68,15 @@ export default function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
-            ref={passwordRef}
           />
           <ColorButton
             type="submit"
             variant="contained"
             color="primary"
             className={classes.submit}
-            disabled={loading}
           >
             Login
           </ColorButton>
-          {/* <Button onClick={handleLoginPopUp} type='submit'>
-            Sign in with Google
-          </Button> */}
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">

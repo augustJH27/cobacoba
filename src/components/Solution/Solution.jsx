@@ -24,6 +24,7 @@ const Complete = ({buttonLabel, primary, dark, dark2}) => {
 							role='button'>
 							<Button3
 							smooth={true} 
+							behavior={'smooth'}
 							duration={500} 
 							spy={true} 
 							exact="true" 
