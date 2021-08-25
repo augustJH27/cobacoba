@@ -17,6 +17,23 @@ export const ServicesContainer = styled.div`
     }
 `;
 
+export const ServicesContainer1 = styled.div`
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+
+    @media screen and (max-width: 768px) {
+        height: 1100px;
+    }
+    
+    @media screen and (max-width: 480px) {
+        height: 1300px;
+    }
+`;
+
 export const ServicesWrapper = styled.div`
     max-width: 1000px;
     margin: 0 auto;
@@ -85,6 +102,18 @@ export const ServicesH11 = styled.h1`
     }
 `;
 
+export const ServicesH12 = styled.h1`
+    font-size: 4.5rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 35px;
+
+    @media screen and (max-width: 480px) {
+        font-size: 2rem;
+        text-align: center;
+    }
+`;
+
 export const ServicesH2 = styled.h2`
     font-size: 1.5rem;
     text-align: center;
@@ -102,6 +131,19 @@ export const ServicesH3 = styled.h2`
     font-weight: 300;
     text-align: center;
     color: #000;
+    margin-top: 1px;
+
+    @media screen and (max-width: 480px) {
+        font-size: 1rem;
+        text-align: center;
+    }
+`;
+
+export const ServicesH31 = styled.h2`
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
     margin-top: 1px;
 
     @media screen and (max-width: 480px) {

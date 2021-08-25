@@ -38,7 +38,7 @@ const Footer = () => {
                 <SocialMedia>
                     <SocialMediaWrap>
                         <SocialLogo to='/' onClick={toggleHome}>Shopperbird</SocialLogo>
-                        <WebsiteRights>Shopperbird © {new Date().getFullYear()} All rights reserved</WebsiteRights>
+                        <WebsiteRights>Copyright © {new Date().getFullYear()}, Shopperbird</WebsiteRights>
                         <SocialIcons>
                             <SocialIconLink href="/" target="_blank" aria-label="Facebook">
                                 <FaFacebook />
