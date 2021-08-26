@@ -85,7 +85,7 @@ export const ServicesH1 = styled.h1`
     margin-bottom: 35px;
 
     @media screen and (max-width: 480px) {
-        font-size: 2rem;
+        font-size: 1.75rem;
         text-align: center;
     }
 `;
@@ -97,7 +97,7 @@ export const ServicesH11 = styled.h1`
     margin-bottom: 35px;
 
     @media screen and (max-width: 480px) {
-        font-size: 2rem;
+        font-size: 1.75rem;
         text-align: center;
     }
 `;
@@ -109,7 +109,7 @@ export const ServicesH12 = styled.h1`
     margin-bottom: 35px;
 
     @media screen and (max-width: 480px) {
-        font-size: 2rem;
+        font-size: 1.75rem;
         text-align: center;
     }
 `;
@@ -121,7 +121,7 @@ export const ServicesH2 = styled.h2`
     margin-top: 1px;
 
     @media screen and (max-width: 480px) {
-        font-size: 1rem;
+        font-size: 0.9rem;
         text-align: center;
     }
 `;
@@ -134,7 +134,7 @@ export const ServicesH3 = styled.h2`
     margin-top: 1px;
 
     @media screen and (max-width: 480px) {
-        font-size: 1rem;
+        font-size: 0.9rem;
         text-align: center;
     }
 `;
@@ -147,7 +147,7 @@ export const ServicesH31 = styled.h2`
     margin-top: 1px;
 
     @media screen and (max-width: 480px) {
-        font-size: 1rem;
+        font-size: 0.9rem;
         text-align: center;
     }
 `;

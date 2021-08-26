@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import './Register.css';
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -85,7 +86,7 @@ const Register = () => {
       <div className={classes.paper}>
         <h1><strong>Join us for free!</strong></h1>
         <br />
-        <h2>Together we make the new system</h2>
+        <h2 text-align='center'>Together we make the new system</h2>
         <form className={classes.form}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
