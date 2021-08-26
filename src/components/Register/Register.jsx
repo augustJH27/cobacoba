@@ -1,15 +1,16 @@
-import React, {useState, useRef} from 'react';
-import { useAuth } from '../../helpers/AuthContext';
-import { useHistory } from 'react-router-dom';
+import React, {Fragment} from 'react';
 
-import Alert from '@material-ui/lab/Alert';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-// import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { grey } from '@material-ui/core/colors';
@@ -42,48 +43,50 @@ const ColorButton = withStyles((theme) => ({
   },
 }))(Button);
 
-export default function Register() {
+const Register = () => {
   const classes = useStyles();
 
-  const firstNameRef = useRef();
-  const lastNameRef = useRef();
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
+  const validationSchema = Yup.object().shape({
+    firstName: Yup.string().required('First name is required'),
+    lastName: Yup.string().required('Last name is required'),
+    email: Yup.string()
+      .required('Email is required')
+      .email('Email is invalid'),
+    password: Yup.string()
+      .required('Password is required')
+      .min(6, 'Password must be at least 6 characters')
+      .max(40, 'Password must not exceed 40 characters'),
+    confirmPassword: Yup.string()
+      .required('Confirm Password is required')
+      .oneOf([Yup.ref('password'), null], 'Confirm Password does not match'),
+    acceptTerms: Yup.bool().oneOf([true], 'Accept Terms is required')
+  });
 
-  const { register } = useAuth();
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-  const history = useHistory()
+  const {
+    register,
+    //register input
+    // control,
+    // register components, work with Controller (wrapper component for controlled inputs)
+    handleSubmit,
+    //handleform submit
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(validationSchema)
+  });
 
-  async function handleSubmit(e) {
-    e.preventDefault()
-
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError('Passwords do not match')
-    }
-
-    try {
-      setError('')
-      setLoading(true)
-      await register(emailRef.current.value, passwordRef.current.value)
-      history.push('/')
-    } catch {
-      setError('Failed to create an account')
-    }
-
-    setLoading(false)
-  }
+  const onSubmit = data => {
+    console.log(JSON.stringify(data, null, 2));
+  };
 
   return (
+    <Fragment>
     <Container component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
         <h1><strong>Join us for free!</strong></h1>
         <br />
         <h2>Together we make the new system</h2>
-        {error && <Alert severity="warning">{error}</Alert>}
-        <form onSubmit={handleSubmit} className={classes.form}>
+        <form className={classes.form}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -95,8 +98,12 @@ export default function Register() {
                 id="firstName"
                 label="First Name"
                 autoFocus
-                ref={firstNameRef}
+                {...register('firstName')}
+                error={errors.firstName ? true : false}
               />
+            <Typography variant="inherit" color="textSecondary">
+                {errors.firstName?.message}
+              </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -107,8 +114,12 @@ export default function Register() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
-                ref={lastNameRef}
+                {...register('lastName')}
+                error={errors.lastName ? true : false}
               />
+            <Typography variant="inherit" color="textSecondary">
+                {errors.lastName?.message}
+              </Typography>
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -119,8 +130,12 @@ export default function Register() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                ref={emailRef}
+                {...register('email')}
+                error={errors.email ? true : false}
               />
+            <Typography variant="inherit" color="textSecondary">
+                {errors.email?.message}
+              </Typography>
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -132,8 +147,12 @@ export default function Register() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                ref={passwordRef}
+                {...register('password')}
+                error={errors.password ? true : false}
               />
+            <Typography variant="inherit" color="textSecondary">
+                {errors.password?.message}
+              </Typography>
             </Grid>
 						<Grid item xs={12}>
               <TextField
@@ -145,8 +164,12 @@ export default function Register() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                ref={passwordConfirmRef}
+                {...register('confirmPassword')}
+                error={errors.confirmPassword ? true : false}
               />
+            <Typography variant="inherit" color="textSecondary">
+                {errors.confirmPassword?.message}
+              </Typography>
             </Grid>
           </Grid>
           <ColorButton 
@@ -154,7 +177,7 @@ export default function Register() {
           variant="contained" 
           color="primary" 
           className={classes.submit}
-          disabled={loading}
+          onClick={handleSubmit(onSubmit)}
           >
           JOIN US
           </ColorButton>
@@ -170,5 +193,8 @@ export default function Register() {
       <Box mt={5}>
       </Box>
     </Container>
+    </Fragment>
   );
 }
+
+export default Register;
