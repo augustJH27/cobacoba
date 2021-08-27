@@ -1,12 +1,5 @@
 import React from 'react';
 
-import { Formik } from "formik";
-import * as Yup from 'yup';
-
-import { connect } from 'react-redux';
-import { loginUser } from '../../redux/actions/userActions';
-import { useHistory } from 'react-router';
-
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -25,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%',
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -44,38 +37,15 @@ const ColorButton = withStyles((theme) => ({
   },
 }))(Button);
 
-const Login =({ loginUser}) => {
+const Login =() => {
   const classes = useStyles();
-
-  const history = useHistory();
 
   return (
     <Container component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
-        <Formik
-        initialValues={{
-          email: '',
-          password: '',
-        }}
-        validationSchema={Yup.object({
-          email: Yup.string()
-            .email("Invalid email address")
-            .required("Required"),
-          password: Yup.string()
-            .min(8, "Password is too short")
-            .max(30, "Password is too long")
-            .required("Required"),
-        })}
-        onSubmit={(values, { setSubmitting, setFieldError }) => {
-          console.log(values);
-          loginUser(values, history, setFieldError, setSubmitting);
-        }}
-      >
-        <React.Fragment>
         <h1><strong>Login</strong></h1>
         <br />
-        {({ isSubmitting }) => (
         <form
         className={classes.form}>
           <TextField
@@ -100,7 +70,6 @@ const Login =({ loginUser}) => {
             id="password"
             autoComplete="current-password"
           />
-          {!isSubmitting && (
           <ColorButton
             type="submit"
             variant="contained"
@@ -109,7 +78,6 @@ const Login =({ loginUser}) => {
           >
             Login
           </ColorButton>
-          )}
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
@@ -123,9 +91,6 @@ const Login =({ loginUser}) => {
             </Grid>
           </Grid>
         </form>
-        )}
-        </React.Fragment>
-        </Formik>
       </div>
       <Box mt={8}>
       </Box>
@@ -133,4 +98,4 @@ const Login =({ loginUser}) => {
   );
 }
 
-export default connect(null, { loginUser })(Login);
+export default Login;
