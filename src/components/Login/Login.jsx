@@ -1,5 +1,12 @@
 import React from 'react';
 
+import { Formik } from "formik";
+import * as Yup from 'yup';
+
+import { connect } from 'react-redux';
+import { loginUser } from '../../redux/actions/userActions';
+import { useHistory } from 'react-router';
+
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -37,16 +44,40 @@ const ColorButton = withStyles((theme) => ({
   },
 }))(Button);
 
-export default function Login() {
+const Login =({ loginUser}) => {
   const classes = useStyles();
 
+  const history = useHistory();
+
   return (
-    
     <Container component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
+        <Formik
+        initialValues={{
+          email: '',
+          password: '',
+        }}
+        validationSchema={Yup.object({
+          email: Yup.string()
+            .email("Invalid email address")
+            .required("Required"),
+          password: Yup.string()
+            .min(8, "Password is too short")
+            .max(30, "Password is too long")
+            .required("Required"),
+        })}
+        onSubmit={(values, { setSubmitting, setFieldError }) => {
+          console.log(values);
+          loginUser(values, history, setFieldError, setSubmitting);
+        }}
+      >
+        <React.Fragment>
         <h1><strong>Login</strong></h1>
-        <form className={classes.form}>
+        <br />
+        {({ isSubmitting }) => (
+        <form
+        className={classes.form}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -69,6 +100,7 @@ export default function Login() {
             id="password"
             autoComplete="current-password"
           />
+          {!isSubmitting && (
           <ColorButton
             type="submit"
             variant="contained"
@@ -77,6 +109,7 @@ export default function Login() {
           >
             Login
           </ColorButton>
+          )}
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
@@ -90,9 +123,14 @@ export default function Login() {
             </Grid>
           </Grid>
         </form>
+        )}
+        </React.Fragment>
+        </Formik>
       </div>
       <Box mt={8}>
       </Box>
     </Container>
   );
 }
+
+export default connect(null, { loginUser })(Login);

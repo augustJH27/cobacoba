@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import { AuthProvider } from './helpers/AuthContext';
 
 import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/index';
@@ -14,7 +13,12 @@ import Design from './components/Design/index';
 import CustomerPage from './pages/CustomerPage';
 import Repeat from './components/Repeat/Repeat';
 
-const App = () => {
+import AuthRoute from './routes/AuthRoute';
+import BasicRoute from './routes/BasicRoute';
+import { connect } from 'react-redux';
+
+
+const App = ({ checked }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => {
@@ -23,22 +27,25 @@ const App = () => {
   
   return (
     <Router>
-      <AuthProvider>
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle} />
-      <Switch>
+        {checked && (
+        <Switch>
         <Route path="/" component={Home} exact />
-        <Route path='/login' component={Login} />
-        <Route path="/register" component={Register} exact />
+        <BasicRoute path='/login' component={Login} />
+        <BasicRoute path="/register" component={Register} exact />
         <Route path='/upcycle' component={Upcycle} />
         <Route path='/design' component={Design} />
-        <Route path='/customer-page' component={CustomerPage} />
+        <AuthRoute path='/customer-page' component={CustomerPage} />
         <Route path='/repeat' component={Repeat} />
-      </Switch>
+        </Switch>
+        )}
         <Footer />
-      </AuthProvider>
     </Router>
   );
 }
+const mapStateToProps = ({ session }) => ({
+  checked: session.checked,
+});
 
-export default App;
+export default connect(mapStateToProps)(App);

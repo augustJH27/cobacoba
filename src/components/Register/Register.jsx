@@ -1,9 +1,12 @@
 import React, {Fragment} from 'react';
 import './Register.css';
 
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import { Formik } from "formik";
 import * as Yup from 'yup';
+
+import { connect } from 'react-redux';
+import { signupUser } from '../../redux/actions/userActions';
+import { useHistory } from 'react-router';
 
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -11,7 +14,7 @@ import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { grey } from '@material-ui/core/colors';
@@ -44,50 +47,48 @@ const ColorButton = withStyles((theme) => ({
   },
 }))(Button);
 
-const Register = () => {
+const Register = ({ signupUser }) => {
   const classes = useStyles();
 
-  const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required('First name is required'),
-    lastName: Yup.string().required('Last name is required'),
-    email: Yup.string()
-      .required('Email is required')
-      .email('Email is invalid'),
-    password: Yup.string()
-      .required('Password is required')
-      .min(6, 'Password must be at least 6 characters')
-      .max(40, 'Password must not exceed 40 characters'),
-    confirmPassword: Yup.string()
-      .required('Confirm Password is required')
-      .oneOf([Yup.ref('password'), null], 'Confirm Password does not match'),
-    acceptTerms: Yup.bool().oneOf([true], 'Accept Terms is required')
-  });
-
-  const {
-    register,
-    //register input
-    // control,
-    // register components, work with Controller (wrapper component for controlled inputs)
-    handleSubmit,
-    //handleform submit
-    formState: { errors }
-  } = useForm({
-    resolver: yupResolver(validationSchema)
-  });
-
-  const onSubmit = data => {
-    console.log(JSON.stringify(data, null, 2));
-  };
+  const history = useHistory();
 
   return (
     <Fragment>
     <Container component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
+        <Formik
+        initialValues={{
+          firstName: '',
+          lastName: '',
+          email: '',
+          password: '',
+          confirmPassword: '',
+        }}
+        validationSchema={Yup.object({
+          firstName: Yup.string().required("Required"),
+          lastName: Yup.string().required('Required'),
+          email: Yup.string()
+            .email("Invalid email address")
+            .required("Required"),
+          password: Yup.string()
+            .min(8, "Password is too short")
+            .max(30, "Password is too long")
+            .required("Required"),
+          confirmPassword: Yup.string()
+            .required("Required")
+            .oneOf([Yup.ref("password")], "Passwords must match"),
+        })}
+        onSubmit={(values, { setSubmitting, setFieldError }) => {
+          signupUser(values, history, setFieldError, setSubmitting);
+        }}
+        >
         <h1><strong>Join us for free!</strong></h1>
         <br />
         <h2 text-align='center'>Together we make the new system</h2>
-        <form className={classes.form}>
+        {({ isSubmitting }) => (
+        <form 
+        className={classes.form}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -99,12 +100,7 @@ const Register = () => {
                 id="firstName"
                 label="First Name"
                 autoFocus
-                {...register('firstName')}
-                error={errors.firstName ? true : false}
               />
-            <Typography variant="inherit" color="textSecondary">
-                {errors.firstName?.message}
-              </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -115,12 +111,7 @@ const Register = () => {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
-                {...register('lastName')}
-                error={errors.lastName ? true : false}
               />
-            <Typography variant="inherit" color="textSecondary">
-                {errors.lastName?.message}
-              </Typography>
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -131,12 +122,7 @@ const Register = () => {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                {...register('email')}
-                error={errors.email ? true : false}
               />
-            <Typography variant="inherit" color="textSecondary">
-                {errors.email?.message}
-              </Typography>
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -148,12 +134,7 @@ const Register = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                {...register('password')}
-                error={errors.password ? true : false}
               />
-            <Typography variant="inherit" color="textSecondary">
-                {errors.password?.message}
-              </Typography>
             </Grid>
 						<Grid item xs={12}>
               <TextField
@@ -165,23 +146,19 @@ const Register = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                {...register('confirmPassword')}
-                error={errors.confirmPassword ? true : false}
               />
-            <Typography variant="inherit" color="textSecondary">
-                {errors.confirmPassword?.message}
-              </Typography>
             </Grid>
           </Grid>
+          {!isSubmitting && (
           <ColorButton 
           type='submit'
           variant="contained" 
           color="primary" 
           className={classes.submit}
-          onClick={handleSubmit(onSubmit)}
           >
           JOIN US
           </ColorButton>
+          )}
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href='/login' variant="body2">
@@ -190,6 +167,8 @@ const Register = () => {
             </Grid>
           </Grid>
         </form>
+        )}
+        </Formik>
       </div>
       <Box mt={5}>
       </Box>
@@ -198,4 +177,4 @@ const Register = () => {
   );
 }
 
-export default Register;
+export default connect(null, { signupUser })(Register);

@@ -16,7 +16,7 @@ const HeroSection = () => {
             <HeroContent>
                 <HeroBtnWrapper1>
                     <Link 
-                    to='/customer-page'
+                    to='/register'
                     role='button'>
                     <div className='button-customer'>
                     <HeroH2>Craft my clothes</HeroH2>
