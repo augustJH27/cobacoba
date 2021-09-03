@@ -12,6 +12,7 @@ import Upcycle from './components/Upcycle/Upcycle';
 import Design from './components/Design/index';
 import CustomerPage from './pages/CustomerPage';
 import Repeat from './components/Repeat/Repeat';
+import Modal from './pages/Modal';
 
 import AuthRoute from './routes/AuthRoute';
 import BasicRoute from './routes/BasicRoute';
@@ -31,6 +32,7 @@ const App = ({ checked }) => {
         <Navbar toggle={toggle} />
         {checked && (
         <Switch>
+        <Route path='/modal' component={Modal} exact />
         <Route path="/" component={Home} exact />
         <BasicRoute path='/login' component={Login} />
         <BasicRoute path="/register" component={Register} exact />

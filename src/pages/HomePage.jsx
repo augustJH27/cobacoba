@@ -1,14 +1,16 @@
 import React from 'react'
-import HeroSection from '../components/HeroSection';
-import Problem from '../components/Problem/Problem';
-import Solution from '../components/Solution/Solution';
+// import HeroSection from '../components/HeroSection';
+import SecondSection from '../components/SecondSection/SecondSection';
+// import Problem from '../components/Problem/Problem';
+// import Solution from '../components/Solution/Solution';
 
 function Home() {
     return (
         <>
-          <HeroSection />
-          <Problem />
-          <Solution />
+          {/* <HeroSection /> */}
+          <SecondSection />
+          {/* <Problem />
+          <Solution /> */}
         </>
     )
 }

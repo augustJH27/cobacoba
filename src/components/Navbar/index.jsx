@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import {FaBars} from 'react-icons/fa';
+// import {FaBars} from 'react-icons/fa';
 import { animateScroll as scroll} from 'react-scroll';
 import { FaUser } from 'react-icons/fa';
 import {IconContext} from 'react-icons/lib';
@@ -9,8 +9,7 @@ import {
     NavbarContainer, 
     NavLogo, 
     MobileIcon, 
-    NavBtn, 
-    NavBtnLink1
+    NavBtn,
 } from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
@@ -37,15 +36,14 @@ const Navbar = ({ toggle }) => {
            <IconContext.Provider value={{ color: '#000'}}>
             <Nav scrollNav={scrollNav}>
                 <NavbarContainer>
-                    <MobileIcon onClick={toggle}>
-                        <Link to='#' className='menu-bars'>
-                        <FaBars />
+                    <MobileIcon>
+                        <Link to='/' cursor='pointer' className='menu-bars'>
+                        <FaUser />
                         </Link>
                     </MobileIcon>
                     <NavLogo to='/' onClick={toggleHome}>Shopperbird</NavLogo>
                     <NavBtn>
-                        <NavBtnLink1 to="/register">Join Us</NavBtnLink1>
-                        <Link to='/register' cursor='pointer'>
+                        <Link to='/customer-page' cursor='pointer'>
                         <FaUser />
                         </Link>
                     </NavBtn>

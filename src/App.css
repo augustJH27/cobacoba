@@ -11,6 +11,7 @@
 a {
   text-decoration: none !important;
   font-family: 'Cardo', serif !important;
+  color: #000 !important;
 }
 
 input {

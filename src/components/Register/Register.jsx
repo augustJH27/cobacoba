@@ -4,12 +4,12 @@ import './Register.css';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
+// import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { grey } from '@material-ui/core/colors';
+// import { grey } from '@material-ui/core/colors';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,35 +20,33 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%',
     marginTop: theme.spacing(3),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-}));
-
-const ColorButton = withStyles((theme) => ({
   root: {
-    padding: '10px 28px',
-    color: theme.palette.getContrastText(grey[900]),
-    backgroundColor: grey[900],
-    '&:hover': {
-      backgroundColor: grey[900],
-    },
+    background: '#fff',
+    borderRadius: 0,
+    borderColor: 'grey.900',
+    color: 'black',
+    backgroundColor: 'transparent',
+    height: 48,
+    padding: '10px 100px',
   },
-}))(Button);
+  label: {
+    textTransform: 'capitalize',
+  },
+}));
 
 const Register = () => {
   const classes = useStyles();
   return (
     <Fragment>
-    <Container component="main" maxWidth="md">
+    <Container component="main" maxWidth="sm">
       <CssBaseline />
       <div className={classes.paper}>
-        <h1><strong>Join us for free!</strong></h1>
-        <br />
-        <h2 text-align='center'>Together we make the new system</h2>
         <form className={classes.form}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -60,7 +58,7 @@ const Register = () => {
                 fullWidth
                 id="firstName"
                 label="First Name"
-                autoFocus
+                // autoFocus
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -80,7 +78,7 @@ const Register = () => {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Company Email"
                 name="email"
                 autoComplete="email"
               />
@@ -110,21 +108,17 @@ const Register = () => {
               />
             </Grid>
           </Grid>
-          <ColorButton 
+          <Button
           type='submit'
-          variant="contained" 
-          color="primary" 
+          fullWidth
+          variant='outlined'
           className={classes.submit}
-          >
-          JOIN US
-          </ColorButton>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href='/login' variant="body2">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
-          </Grid>
+          classes={{
+            root: classes.root, // class name, e.g. `classes-nesting-root-x`
+            label: classes.label, // class name, e.g. `classes-nesting-label-x`
+          }}>
+            REGISTER
+            </Button>
         </form>
       </div>
       <Box mt={5}>
