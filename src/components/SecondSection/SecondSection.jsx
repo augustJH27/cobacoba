@@ -22,8 +22,8 @@ const HeroSection = () => {
                 14 days free trial
                 </HeroP>
                 <HeroBtnWrapper>
-                    <Button4 to="/register" onMouseEnter={onHover} onMouseLeave={onHover} primary='true' dark='true'>
-                        <Link to='/register'>
+                    <Button4 to="/modal" onMouseEnter={onHover} onMouseLeave={onHover} primary='true' dark='true'>
+                        <Link to='/modal'>
                         REGISTER
                         </Link>
                     </Button4>
