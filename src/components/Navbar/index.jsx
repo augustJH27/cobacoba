@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../../assets/logo.svg';
 // import {FaBars} from 'react-icons/fa';
 import { animateScroll as scroll} from 'react-scroll';
 import { FaUser } from 'react-icons/fa';
@@ -38,7 +39,7 @@ const Navbar = ({ toggle }) => {
                 <NavbarContainer>
                     <MobileIcon>
                         <Link to='/' cursor='pointer' className='menu-bars'>
-                        <FaUser />
+                        <img src={Logo} alt="" width="50" height="50" />
                         </Link>
                     </MobileIcon>
                     <NavLogo to='/' onClick={toggleHome}>Shopperbird</NavLogo>
