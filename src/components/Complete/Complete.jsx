@@ -2,29 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ServicesContainer, ServicesH1, ServicesH2, } from '../Design/DesignElements';
 import { BtnWrap } from '../InfoSection/InfoElements';
-import { Button } from '../ButtonElements';
+import { Button3 } from '../ButtonElements';
 
-const Complete = ({buttonLabel, primary, dark, dark2}) => {
+const Complete = () => {
     return (
         <ServicesContainer id='services'>
-            <ServicesH1>Complete your account</ServicesH1>
-            <ServicesH2>Add your address, get your free measuring soft tape and measure your profile, easy right?</ServicesH2>
+            <ServicesH1>The first Italian on-demand<br/>fashion platform</ServicesH1>
+            <ServicesH2>Start crafting your style now for free</ServicesH2>
 						<br/>
 						<BtnWrap>
 							<Link 
-							to='/register' 
+							to='/modal' 
 							role='button'>
-							<Button
-							smooth={true} 
-							duration={500} 
-							spy={true} 
-							exact="true" 
-							offset={-80} 
-							primary={primary ? 1 : 0} 
-							dark={dark ? 1 : 0} 
-							dark2={dark2 ? 1 : 0}
-							>{buttonLabel}<span>Account</span>
-							</Button>
+							<Button3>REGISTER</Button3>
 							</Link>
 							</BtnWrap>
         </ServicesContainer>

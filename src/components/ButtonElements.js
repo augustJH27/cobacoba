@@ -74,7 +74,7 @@ export const Button2 = styled(Link)`
 export const Button3 = styled.div`
     border-radius: 0px;
     width: 12rem;
-    height: 5rem;
+    height: 4rem;
 
     background: ${({ primary }) => (primary ? '#000' : '#fff')};
     white-space: nowrap;
@@ -89,11 +89,6 @@ export const Button3 = styled.div`
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
-
-    &:hover {
-        transition : all 0.2s ease-in-out;
-        background: ${({ primary }) => (primary ? '#92a89f' : '#dae0e0')};
-    }
 `;
 
 export const Button4 = styled.div`
@@ -107,16 +102,14 @@ export const Button4 = styled.div`
     color : ${({ dark }) => (dark ? '#000' : '#fff')};
     font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
     outline: 2px solid #000;
-    /* border: 3px #000 solid; */
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: outline .1s linear;
-    /* transition: all 0.2s ease-in-out; */
 
     &:hover {
         transition : all 0.2s ease-in-out;
-        /* background: ${({ primary }) => (primary ? '#92a89f' : '#dae0e0')}; */
     }
+
 `;

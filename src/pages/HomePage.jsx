@@ -1,18 +1,15 @@
 import React from 'react'
-// import HeroSection from '../components/HeroSection';
-import SecondSection from '../components/SecondSection/SecondSection';
-// import Problem from '../components/Problem/Problem';
-// import Solution from '../components/Solution/Solution';
+import CustomerPage from '../pages/CustomerPage';
+
+import Album from '../components/MVP/Mvp';
 
 function Home() {
-    return (
-        <>
-          {/* <HeroSection /> */}
-          <SecondSection />
-          {/* <Problem />
-          <Solution /> */}
-        </>
+  return (
+    <>
+    <CustomerPage />
+    <Album />
+    </>
     )
-}
+};
 
 export default Home;

@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react';
-import './Register.css';
 
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -59,7 +58,7 @@ const Register = () => {
                 fullWidth
                 id="firstName"
                 label="First Name"
-                // autoFocus
+                autoFocus
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -96,18 +95,6 @@ const Register = () => {
                 autoComplete="current-password"
               />
             </Grid>
-						<Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Confirm Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
           </Grid>
           <Button
           type='submit'
@@ -119,7 +106,8 @@ const Register = () => {
             label: classes.label, // class name, e.g. `classes-nesting-label-x`
           }}>
             REGISTER
-            </Button>
+          </Button>
+
         </form>
       </div>
       <Box mt={5}>

@@ -10,9 +10,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Register from '../components/Register/Register';
 
-// import Login from '../components/Login/Login';
-
-
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import {HeroContainer, HeroBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper} from './HeroElements';
 import {Button3} from '../ButtonElements';
