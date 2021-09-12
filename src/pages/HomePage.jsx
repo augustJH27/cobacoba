@@ -1,13 +1,12 @@
 import React from 'react'
-import CustomerPage from '../pages/CustomerPage';
-
-import Album from '../components/MVP/Mvp';
+import WelcomePage from '../components/Welcome/WelcomePage';
+import LandingPage from './LandingPage';
 
 function Home() {
   return (
     <>
-    <CustomerPage />
-    <Album />
+    <LandingPage />
+    <WelcomePage />
     </>
     )
 };

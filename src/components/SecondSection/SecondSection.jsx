@@ -19,8 +19,8 @@ const HeroSection = () => {
                 Start crafting your style now for free
                 </HeroP>
                 <HeroBtnWrapper>
-                <Link to='/modal'>
-                    <Button3 to="/modal" 
+                <Link to='/register'>
+                    <Button3 to="register" 
                     // onMouseEnter={onHover} onMouseLeave={onHover} primary='true' dark='true'
                     >   
                         REGISTER   

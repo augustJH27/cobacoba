@@ -37,7 +37,7 @@ const Navbar = ({ toggle }) => {
                         </Link>
                     </MobileIcon>
                     <NavBtn>
-                        <Link to='/customer-page' cursor='pointer'>
+                        <Link to='/register' cursor='pointer'>
                         <FaUser />
                         </Link>
                     </NavBtn>

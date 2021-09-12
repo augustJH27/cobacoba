@@ -4,7 +4,7 @@ import { ServicesContainer, ServicesH1, ServicesH2, } from '../Design/DesignElem
 import { BtnWrap } from '../InfoSection/InfoElements';
 import { Button3 } from '../ButtonElements';
 
-const Complete = () => {
+const Main = () => {
     return (
         <ServicesContainer id='services'>
             <ServicesH1>The first Italian on-demand<br/>fashion platform</ServicesH1>
@@ -12,7 +12,7 @@ const Complete = () => {
 						<br/>
 						<BtnWrap>
 							<Link 
-							to='/modal' 
+							to='/register' 
 							role='button'>
 							<Button3>REGISTER</Button3>
 							</Link>
@@ -21,4 +21,4 @@ const Complete = () => {
     )
 }
 
-export default Complete;
+export default Main;

@@ -3,12 +3,13 @@ import React, {useState} from 'react';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Register from '../components/Register/Register';
+
+import CustomerLogin from '../container/Customer/Login/CustomerLogin';
+import SupplierLogin from '../container/Supplier/Login/SupplierLogin';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Modal =() => {
+const ModalLogin =() => {
   const classes = useStyles();
 
 	const [value,setValue]=useState(0)
@@ -58,7 +59,7 @@ const Modal =() => {
     <Container component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
-			<h1><strong>Join us for free!</strong></h1>
+			<h1><strong>Log in!</strong></h1>
         <br />
         <h2 text-align='center'>Together we make the new system</h2>
 			<Tabs
@@ -75,10 +76,10 @@ const Modal =() => {
         <form
         className={classes.form}>
 					<TabPanel value={value} index={0}>
-          <Register handleChange={handleChange}/>
+          <CustomerLogin handleChange={handleChange}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Register />
+      <SupplierLogin />
       </TabPanel>
         </form>
       </div>
@@ -88,4 +89,4 @@ const Modal =() => {
   );
 }
 
-export default Modal;
+export default ModalLogin;

@@ -6,17 +6,18 @@ import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/index';
 import Sidebar from './components/Sidebar/index';
 import Home from './pages/HomePage';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
+import Login from './pages/LoginPage';
+import Register from './pages/RegisterPage';
 import Upcycle from './components/Upcycle/Upcycle';
 import Design from './components/Design/index';
-import CustomerPage from './pages/CustomerPage';
 import Repeat from './components/Repeat/Repeat';
-import Modal from './pages/Modal';
 
 import AuthRoute from './routes/AuthRoute';
 import BasicRoute from './routes/BasicRoute';
 import { connect } from 'react-redux';
+import Production from './components/Production/Production';
+import LandingPage from './pages/LandingPage';
+
 
 
 const App = ({ checked }) => {
@@ -32,13 +33,13 @@ const App = ({ checked }) => {
         <Navbar toggle={toggle} />
         {checked && (
         <Switch>
-        <Route path='/modal' component={Modal} exact />
         <Route path="/" component={Home} exact />
         <BasicRoute path='/login' component={Login} />
         <BasicRoute path="/register" component={Register} exact />
         <Route path='/upcycle' component={Upcycle} />
         <Route path='/design' component={Design} />
-        <AuthRoute path='/customer-page' component={CustomerPage} />
+        <AuthRoute path='/' component={LandingPage} />
+        <Route path='/production' component={Production} />
         <Route path='/repeat' component={Repeat} />
         </Switch>
         )}

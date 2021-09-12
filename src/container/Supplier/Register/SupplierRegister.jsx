@@ -31,16 +31,25 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 0,
     borderColor: 'grey.900',
     color: 'black',
-    backgroundColor: 'transparent',
+    backgroundColor: '#fff',
     height: 48,
     padding: '10px 100px',
+  },
+  second: {
+    background: '#fff',
+    borderRadius: 0,
+    borderColor: 'grey.900',
+    color: 'black',
+    backgroundColor: '#fff',
+    height: 36,
+    padding: '5px 100px',
   },
   label: {
     textTransform: 'capitalize',
   },
 }));
 
-const Register = () => {
+const SupplierRegister = () => {
   const classes = useStyles();
   return (
     <Fragment>
@@ -105,9 +114,19 @@ const Register = () => {
             root: classes.root, // class name, e.g. `classes-nesting-root-x`
             label: classes.label, // class name, e.g. `classes-nesting-label-x`
           }}>
-            REGISTER
+            Register
           </Button>
-
+          <Button
+          type='submit'
+          fullWidth
+          variant='outlined'
+          className={classes.submit}
+          classes={{
+            root: classes.second, // class name, e.g. `classes-nesting-root-x`
+            label: classes.label, // class name, e.g. `classes-nesting-label-x`
+          }}>
+            Login
+          </Button>
         </form>
       </div>
       <Box mt={5}>
@@ -117,4 +136,4 @@ const Register = () => {
   );
 }
 
-export default Register;
+export default SupplierRegister;
