@@ -15,8 +15,8 @@ import Repeat from './components/Repeat/Repeat';
 import AuthRoute from './routes/AuthRoute';
 import BasicRoute from './routes/BasicRoute';
 import { connect } from 'react-redux';
-import Production from './components/Production/Production';
 import LandingPage from './pages/LandingPage';
+import Production from './components/Production/Production';
 
 
 
@@ -38,8 +38,8 @@ const App = ({ checked }) => {
         <BasicRoute path="/register" component={Register} exact />
         <Route path='/upcycle' component={Upcycle} />
         <Route path='/design' component={Design} />
+        <Route path='/production' component={Production} exact/>
         <AuthRoute path='/' component={LandingPage} />
-        <Route path='/production' component={Production} />
         <Route path='/repeat' component={Repeat} />
         </Switch>
         )}

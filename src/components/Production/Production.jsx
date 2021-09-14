@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { PricingWrapper, PricingHeading } from '../PricingElements';
 
-function Production() {
+const Production = () => {
 	return (
 		<div>
-			<h1>Production page</h1>
+			<PricingWrapper>
+				<PricingHeading>Production</PricingHeading>
+			</PricingWrapper>
 		</div>
 	)
 }

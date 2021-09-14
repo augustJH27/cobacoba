@@ -19,8 +19,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CLOUDINARY_UPLOAD_PRESET = "upload";
+
 const CLOUDINARY_UPLOAD_URL =
   "https://api.cloudinary.com/v1_1/gixxerblade/upload";
+  
 const Form = ({
   formData,
   setFormData,
